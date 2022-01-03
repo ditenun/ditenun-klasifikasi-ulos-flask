@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Klasifikasi</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class='bx bx-menu' ></i>
+      <span class="logo_name">Tim DiTenun</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#">
+          <i class='bx bx-pencil' ></i>
+          <span class="link_name">Hasilkan Desain</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Hasilkan Desain</a></li>
+        </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-box' ></i>
+            <span class="link_name">Motif</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" href="#">Motif</a></li>
+          </ul>
+        </li>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bxs-t-shirt' ></i>
+          <span class="link_name">Kain Saya</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Kain Saya</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="#">  
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Klasifikasi Ulos</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Jenis Ulos </a></li>
+          <li><a href="/toba">Ulos Toba</a></li>
+          <li><a href="/karo">Ulos karo</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-cog' ></i>
+          <span class="link_name">Setting</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Setting</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-log-out' ></i>
+          <span class="link_name">keluar</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Keluar</a></li>
+        </ul>
+      </li>
+  </li>
+</ul>
+  </div>
+
+  <section class="home-section">
+    <div class="home-content">
+      <div class="text" id="textbar">Ulos Batak {{jenis}}</div>
+      </div>
+    <div class="home_content">
+      <div class="container">
+            <div class="card">
+              <form class="form-horizontal" action="{{typesubmit}}" method="post" enctype="multipart/form-data">
+
+                <div>
+                  <label for="pwd">Upload Your Image :</label>
+                  <div class="border table">
+                    <input style="allButton" type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="allButton">Submit</button>
+                  </div>
+                </div>
+              </form>
+
+                {% if prediction %}
+                <img src="{{img_path}}" height="400px" width="400px">
+                <h2> Your Prediction   : <i> {{prediction}} </i></h2>
+
+                {% endif %}
+            </div>
+      </div>
+  </section>
+
+  <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+
+</body>
+</html>
